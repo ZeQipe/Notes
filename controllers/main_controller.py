@@ -7,6 +7,7 @@ class MainController:
         self.model = NotesStorage()
         self.view = MainView()
         self.view.set_controller(self)
+        self.view.update_notes(self.model.notes)  # Обновляем вид заметок при запуске
 
     def add_note(self, title, content, color, is_task, deadline):
         self.model.add_note(title, content, color, is_task, deadline)
